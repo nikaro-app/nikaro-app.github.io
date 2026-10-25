@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy &bull; Nikaro Flashcards</title>
+  <link rel="icon" type="image/png" href="assets/app_icon.png">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #10b981;
+      --accent-soft: rgba(16, 185, 129, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding: 48px 20px;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .header img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+    h1 { font-size: 30px; font-weight: 700; color: #fff; }
+    .meta { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+    h2 {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+    p, ul { color: var(--text); margin-bottom: 16px; font-size: 15px; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .footer {
+      margin-top: 48px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="assets/app_icon.png" alt="Nikaro Logo">
+      <div>
+        <h1>Privacy Policy</h1>
+        <div class="meta">Nikaro: Smart Flashcards &bull; Effective Date: October 25, 2026</div>
+      </div>
+    </div>
+
+    <div class="badge">Privacy-First Architecture</div>
+    <p>Welcome to <strong>Nikaro</strong> ("we", "our", or "the app"). We respect your privacy and are committed to protecting it. This Privacy Policy details our data practices and principles, particularly that <strong>your study material belongs entirely to you</strong>.</p>
+
+    <h2>1. User Content & Local Storage</h2>
+    <p>Nikaro is designed offline-first:</p>
+    <ul>
+      <li>All flashcard decks, notes, study history, repetition intervals, and user tags are stored locally in an encrypted/private SQLite database directly on your device.</li>
+      <li>We do not sell, rent, monetize, or harvest the contents of your flashcards or learning materials.</li>
+    </ul>
+
+    <h2>2. Diagnostics, Crash Reports & Telemetry</h2>
+    <p>To ensure high performance, reliable spaced repetition scheduling, and rapid resolution of software defects, the app utilizes industry-standard crash reporting:</p>
+    <ul>
+      <li><strong>Google Firebase Crashlytics:</strong> In the event of an unexpected crash or freeze, Crashlytics transmits non-personally identifiable diagnostic crash traces, operating system versions, and device model identifiers. This data is used strictly for debugging and stability improvements.</li>
+      <li><strong>Google Play Services:</strong> Manages standard application installation, version validation, and anonymized performance metrics as governed by the Google Play Terms of Service.</li>
+    </ul>
+
+    <h2>3. Device Permissions & How They Are Used</h2>
+    <p>Nikaro requests only the permissions necessary to provide its core study functions:</p>
+    <ul>
+      <li><strong>Notifications (POST_NOTIFICATIONS / Alarms):</strong> Used exclusively to deliver scheduled review reminders and study notifications configured by you.</li>
+      <li><strong>Audio / Microphone (Optional):</strong> Used only when you choose to record custom pronunciation audio for your flashcards. Recorded audio is stored locally on your device.</li>
+      <li><strong>Photo Library / Storage Access (Optional):</strong> Used if you attach images to your flashcard notes.</li>
+    </ul>
+
+    <h2>4. Third-Party Sharing</h2>
+    <p>We do not share your personal data with third-party advertising networks, data brokers, or marketing platforms. There are zero targeted third-party ad networks embedded in the app.</p>
+
+    <h2>5. Children's Privacy</h2>
+    <p>Nikaro does not knowingly collect or solicit any personally identifiable information from children under the age of 13. If you believe that a child has provided us with personal information, please contact us immediately so that we can take appropriate measures.</p>
+
+    <h2>6. Changes to this Policy</h2>
+    <p>We may update this Privacy Policy occasionally to reflect product enhancements or legal requirements. Updated versions will be published directly on this website with an updated revision date.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, you can reach us at:</p>
+    <p><strong>Support & Inquiries:</strong> <a href="mailto:nikaro.app@gmail.com">nikaro.app@gmail.com</a></p>
+
+    <div class="footer">
+      &copy; 2026 Nikaro. All rights reserved. &bull; <a href="index.html">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>
