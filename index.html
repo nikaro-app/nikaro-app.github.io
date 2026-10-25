@@ -163,11 +163,11 @@
     /* Showcase Mascot / Card Preview */
     .hero-mockup {
       width: 100%;
-      max-width: 680px;
-      background: linear-gradient(180deg, rgba(31, 41, 55, 0.5) 0%, rgba(17, 24, 39, 0.8) 100%);
+      max-width: 520px;
+      background: linear-gradient(180deg, rgba(31, 41, 55, 0.45) 0%, rgba(17, 24, 39, 0.85) 100%);
       border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 32px 24px;
+      border-radius: 28px;
+      padding: 32px 20px 24px;
       backdrop-filter: blur(16px);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
       display: flex;
@@ -176,62 +176,188 @@
       position: relative;
     }
     .mascot-container {
-      width: 140px;
-      height: 140px;
+      width: 110px;
+      height: 110px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
-      filter: drop-shadow(0 12px 24px var(--accent-glow));
+      margin-bottom: 20px;
+      filter: drop-shadow(0 10px 20px var(--accent-glow));
     }
     .mascot-container img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
+    
+    /* Study Counters Bar (matches StudyCountersBar from Flutter) */
+    .study-counters-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(44, 44, 46, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 24px;
+      padding: 5px 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+    .counter-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .counter-chip.new-cards {
+      color: #60a5fa;
+    }
+    .counter-chip.review-cards {
+      color: #34d399;
+    }
+    .counter-chip svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Flashcard (matches FlashcardFlipWidget from Flutter) */
     .mockup-card {
-      background: #1f2937;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 20px 24px;
+      background: #1c1c1e;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 24px;
+      padding: 24px;
       width: 100%;
       max-width: 440px;
       text-align: left;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .mockup-card:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+      transform: translateY(-2px);
+    }
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
     }
     .mockup-tag {
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
       font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.14);
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+    .audio-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      transition: all 0.2s;
+    }
+    .audio-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    .mockup-front {
+      margin-bottom: 24px;
     }
     .mockup-question {
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+      letter-spacing: -0.3px;
+    }
+    .mockup-transcription {
+      font-size: 14px;
+      color: #9ca3af;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       margin-bottom: 12px;
     }
-    .mockup-rating {
-      display: flex;
-      gap: 8px;
-      margin-top: 16px;
+    .mockup-back {
+      border-top: 1px dashed rgba(255, 255, 255, 0.12);
+      padding-top: 14px;
     }
-    .rating-pill {
-      flex: 1;
-      padding: 8px 4px;
-      font-size: 11px;
+    .mockup-answer {
+      font-size: 17px;
       font-weight: 600;
-      text-align: center;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-muted);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e5e7eb;
+      margin-bottom: 4px;
     }
-    .rating-pill.again { border-color: rgba(239, 68, 68, 0.4); color: #f87171; }
-    .rating-pill.hard { border-color: rgba(245, 158, 11, 0.4); color: #fbbf24; }
-    .rating-pill.good { border-color: rgba(59, 130, 246, 0.4); color: #60a5fa; }
-    .rating-pill.easy { border-color: rgba(16, 185, 129, 0.4); color: #34d399; }
+    .mockup-example {
+      font-size: 13px;
+      color: #9ca3af;
+      font-style: italic;
+    }
+    
+    /* 3 Rating Buttons (Matches RatingButtonsWidget: Again, Good, Easy) */
+    .mockup-rating {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    .rating-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 4px;
+      border-radius: 16px;
+      font-weight: 600;
+      font-size: 13px;
+      border: 1.5px solid transparent;
+      transition: transform 0.15s ease, filter 0.15s ease;
+      cursor: pointer;
+    }
+    .rating-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.15);
+    }
+    .rating-btn .time {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.85;
+      margin-top: 2px;
+    }
+    /* Rating colors matching AppCustomColors tokens */
+    .rating-btn.again {
+      background: rgba(239, 68, 68, 0.16);
+      border-color: rgba(239, 68, 68, 0.45);
+      color: #ef4444;
+    }
+    .rating-btn.good {
+      background: rgba(96, 165, 250, 0.16);
+      border-color: rgba(96, 165, 250, 0.45);
+      color: #60a5fa;
+    }
+    .rating-btn.easy {
+      background: rgba(52, 211, 153, 0.16);
+      border-color: rgba(52, 211, 153, 0.45);
+      color: #34d399;
+    }
+    .flip-hint {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
 
     /* Features Grid */
     .section {
@@ -405,14 +531,64 @@
       <div class="mascot-container">
         <img src="assets/mascot.svg" alt="Nikaro Mascot">
       </div>
-      <div class="mockup-card">
-        <div class="mockup-tag">Spanish &bull; Vocabulary</div>
-        <div class="mockup-question">la serenidad</div>
+
+      <!-- Real Nikaro Counters Bar -->
+      <div class="study-counters-bar">
+        <div class="counter-chip new-cards">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 9l1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z"/>
+          </svg>
+          <span>12 New</span>
+        </div>
+        <div class="counter-chip review-cards">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
+          </svg>
+          <span>8 Review</span>
+        </div>
+      </div>
+
+      <!-- Flashcard with 3 Nikaro Rating Buttons -->
+      <div class="mockup-card" id="demoCard" onclick="toggleCard()">
+        <div class="card-top-row">
+          <span class="mockup-tag">Spanish &bull; Advanced</span>
+          <button class="audio-btn" type="button" title="Pronounce" onclick="event.stopPropagation(); playPronounce();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="mockup-front">
+          <div class="mockup-question" id="cardPrompt">la serenidad</div>
+          <div class="mockup-transcription">[la se.ɾe.niˈðað]</div>
+        </div>
+
+        <div class="mockup-back" id="cardBack">
+          <div class="mockup-answer">serenity, tranquility</div>
+          <div class="mockup-example">"Mantuvo la serenidad en todo momento."</div>
+        </div>
+
         <div class="mockup-rating">
-          <div class="rating-pill again">Again &bull; 10m</div>
-          <div class="rating-pill hard">Hard &bull; 2d</div>
-          <div class="rating-pill good">Good &bull; 6d</div>
-          <div class="rating-pill easy">Easy &bull; 14d</div>
+          <div class="rating-btn again" onclick="event.stopPropagation(); flashBtn(this);">
+            <span>Again</span>
+            <span class="time">10m</span>
+          </div>
+          <div class="rating-btn good" onclick="event.stopPropagation(); flashBtn(this);">
+            <span>Good</span>
+            <span class="time">4d</span>
+          </div>
+          <div class="rating-btn easy" onclick="event.stopPropagation(); flashBtn(this);">
+            <span>Easy</span>
+            <span class="time">12d</span>
+          </div>
+        </div>
+
+        <div class="flip-hint">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+          </svg>
+          <span>Tap card to flip direction (Front ⇄ Back)</span>
         </div>
       </div>
     </div>
@@ -506,5 +682,37 @@
     </div>
   </footer>
 
+  <script>
+    let isFlipped = false;
+    function toggleCard() {
+      isFlipped = !isFlipped;
+      const prompt = document.getElementById('cardPrompt');
+      const back = document.getElementById('cardBack');
+      if (isFlipped) {
+        prompt.textContent = 'serenity, tranquility';
+        back.innerHTML = '<div class="mockup-answer">la serenidad</div><div class="mockup-example">"Mantuvo la serenidad en todo momento."</div>';
+      } else {
+        prompt.textContent = 'la serenidad';
+        back.innerHTML = '<div class="mockup-answer">serenity, tranquility</div><div class="mockup-example">"Mantuvo la serenidad en todo momento."</div>';
+      }
+    }
+
+    function flashBtn(el) {
+      el.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        el.style.transform = '';
+      }, 150);
+    }
+
+    function playPronounce() {
+      if ('speechSynthesis' in window) {
+        const text = isFlipped ? 'serenity' : 'la serenidad';
+        const lang = isFlipped ? 'en-US' : 'es-ES';
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        window.speechSynthesis.speak(utterance);
+      }
+    }
+  </script>
 </body>
 </html>
