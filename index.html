@@ -204,10 +204,10 @@
     }
 
     .brand-logo-img {
-      width: 44px;
-      height: 44px;
+      width: 56px;
+      height: 56px;
       object-fit: contain;
-      filter: drop-shadow(0 6px 16px var(--accent-glow));
+      filter: drop-shadow(0 8px 20px var(--accent-glow));
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -362,6 +362,108 @@
       }
     }
 
+    /* Theme Switcher (Header) */
+    .theme-switcher {
+      position: relative;
+    }
+
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      padding: 7px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .theme-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-border);
+      color: #fff;
+    }
+
+    .theme-btn-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .theme-btn:hover .theme-btn-dot {
+      transform: scale(1.2);
+    }
+
+    .theme-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: rgba(18, 24, 38, 0.98);
+      border: 1px solid var(--accent-border);
+      border-radius: 14px;
+      padding: 6px;
+      min-width: 165px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7), 0 0 20px var(--accent-glow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      z-index: 1100;
+    }
+
+    .theme-dropdown.is-open {
+      display: flex;
+    }
+
+    .theme-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      min-height: 38px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .theme-option-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .theme-option:hover, .theme-option:active {
+      background: var(--accent-soft);
+      color: #fff;
+    }
+
+    .theme-option.is-active {
+      color: #fff;
+      font-weight: 700;
+      background: var(--accent-soft);
+    }
+
+    .theme-option .theme-check {
+      font-size: 12px;
+      opacity: 0;
+      color: var(--accent);
+    }
+
+    .theme-option.is-active .theme-check {
+      opacity: 1;
+    }
+
     /* Language Switcher */
     .lang-switcher {
       position: relative;
@@ -450,7 +552,7 @@
        ========================================================================== */
     .hero {
       max-width: 900px;
-      margin: 36px auto 72px;
+      margin: 28px auto 56px;
       padding: 0 20px;
       text-align: center;
       display: flex;
@@ -470,7 +572,7 @@
       border-radius: 20px;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       text-transform: uppercase;
       letter-spacing: 0.6px;
       box-shadow: 0 2px 14px var(--accent-soft);
@@ -488,17 +590,18 @@
       font-weight: 800;
       line-height: 1.1;
       letter-spacing: -1.5px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       background: linear-gradient(180deg, #ffffff 40%, #9ca3af 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
+      text-wrap: balance;
       font-size: clamp(16px, 2.5vw, 20px);
       color: var(--text-muted);
-      max-width: 640px;
-      margin-bottom: 36px;
+      max-width: 600px;
+      margin-bottom: 28px;
       line-height: 1.55;
     }
 
@@ -508,7 +611,7 @@
       flex-wrap: wrap;
       gap: 14px;
       justify-content: center;
-      margin-bottom: 52px;
+      margin-bottom: 44px;
     }
 
     .btn-store {
@@ -601,17 +704,17 @@
     }
 
     /* ==========================================================================
-       Interactive Flashcard Mockup (Clean, Focused, No Visual Clutter)
+       Interactive Flashcard Mockup (3D Flip, App-Accurate, Compact)
        ========================================================================== */
     .hero-mockup {
       width: 100%;
-      max-width: 500px;
-      background: linear-gradient(180deg, rgba(31, 41, 55, 0.45) 0%, rgba(17, 24, 39, 0.85) 100%);
+      max-width: 430px;
+      background: linear-gradient(180deg, rgba(26, 34, 48, 0.55) 0%, rgba(14, 19, 29, 0.9) 100%);
       border: 1px solid var(--card-border);
-      border-radius: 28px;
-      padding: 28px 20px 24px;
+      border-radius: 26px;
+      padding: 18px 16px 16px;
       backdrop-filter: blur(16px);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -627,7 +730,7 @@
       border: 1px solid rgba(255, 255, 255, 0.09);
       border-radius: 24px;
       padding: 5px 14px;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
     }
 
@@ -635,7 +738,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
     }
 
@@ -644,36 +747,89 @@
     .counter-chip.learn-cards { color: #f59e0b; }
 
     .counter-chip svg {
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
     }
 
-    /* Flashcard Flip Widget */
-    .mockup-card {
-      background: #1c1c1e;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 24px;
-      padding: 24px;
+    /* 3D Card Stage */
+    .card-stage {
       width: 100%;
-      max-width: 440px;
-      text-align: left;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      max-width: 390px;
+      height: 220px;
+      perspective: 1000px;
       position: relative;
       cursor: pointer;
       user-select: none;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
     }
 
-    .mockup-card:hover {
+    .card-flipper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 22px;
+    }
+
+    .card-stage.is-flipped .card-flipper {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 22px;
+      background: #171b26;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.38);
+      padding: 16px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      overflow: hidden;
+    }
+
+    .card-stage:hover .card-face {
       border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .card-face.card-front {
+      transform: rotateY(0deg);
+    }
+
+    .card-face.card-back {
+      transform: rotateY(180deg);
+      border-color: var(--accent-border);
+      background: radial-gradient(130% 120% at 50% 0%, var(--accent-soft) 0%, #151824 80%);
     }
 
     .card-top-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 18px;
+      width: 100%;
+    }
+
+    .card-badge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .card-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #60a5fa;
+      box-shadow: 0 0 6px #60a5fa;
+      flex-shrink: 0;
     }
 
     .mockup-tag {
@@ -683,8 +839,24 @@
       letter-spacing: 0.5px;
       color: var(--accent);
       background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: 8px;
+      padding: 3px 9px;
+      border-radius: 7px;
+    }
+
+    .mockup-tag.subtle {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+    }
+
+    .card-answer-badge {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      background: var(--accent);
+      padding: 3px 8px;
+      border-radius: 6px;
     }
 
     .audio-btn {
@@ -698,50 +870,79 @@
       justify-content: center;
       color: #9ca3af;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
     }
 
     .audio-btn:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.14);
+      border-color: var(--accent-border);
+      transform: scale(1.05);
     }
 
-    .mockup-front {
-      margin-bottom: 20px;
+    .card-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex: 1;
+      padding: 4px 0;
     }
 
     .mockup-question {
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
       letter-spacing: -0.3px;
+      line-height: 1.25;
     }
 
     .mockup-transcription {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #9ca3af;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      margin-bottom: 10px;
-    }
-
-    .mockup-back {
-      border-top: 1px dashed rgba(255, 255, 255, 0.12);
-      padding-top: 14px;
+      letter-spacing: 0.3px;
     }
 
     .mockup-answer {
-      font-size: 17px;
-      font-weight: 600;
-      color: #e5e7eb;
-      margin-bottom: 4px;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      letter-spacing: -0.2px;
+      line-height: 1.25;
     }
 
     .mockup-example {
-      font-size: 13px;
-      color: #9ca3af;
+      font-size: 12.5px;
+      color: #94a3b8;
       font-style: italic;
       line-height: 1.45;
+      max-width: 94%;
+    }
+
+    .card-bottom-hint {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-muted);
+      opacity: 0.75;
+      transition: opacity 0.2s ease, color 0.2s ease;
+    }
+
+    .card-stage:hover .card-bottom-hint {
+      opacity: 1;
+      color: #fff;
+    }
+
+    .card-bottom-hint.back-hint {
+      color: var(--accent);
+      opacity: 0.9;
     }
 
     /* 3 Rating Buttons (Again, Good, Easy) */
@@ -749,8 +950,9 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 8px;
-      margin-top: 20px;
+      margin-top: 14px;
       width: 100%;
+      max-width: 390px;
     }
 
     .rating-btn {
@@ -758,52 +960,47 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 10px 4px;
-      border-radius: 16px;
+      padding: 8px 4px;
+      border-radius: 14px;
       font-weight: 600;
-      font-size: 13px;
+      font-size: 12.5px;
       border: 1.5px solid transparent;
-      transition: transform 0.15s ease, filter 0.15s ease;
+      transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
       cursor: pointer;
+      user-select: none;
     }
 
     .rating-btn:hover {
       transform: translateY(-2px);
-      filter: brightness(1.15);
+      filter: brightness(1.12);
+    }
+
+    .rating-btn:active {
+      transform: scale(0.97);
     }
 
     .rating-btn .time {
-      font-size: 11px;
-      font-weight: 500;
+      font-size: 10.5px;
       opacity: 0.85;
       margin-top: 2px;
     }
 
     .rating-btn.again {
-      background: rgba(239, 68, 68, 0.16);
-      border-color: rgba(239, 68, 68, 0.45);
-      color: #ef4444;
+      background: rgba(239, 68, 68, 0.14);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.35);
     }
 
     .rating-btn.good {
-      background: rgba(96, 165, 250, 0.16);
-      border-color: rgba(96, 165, 250, 0.45);
-      color: #60a5fa;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: var(--accent-border);
     }
 
     .rating-btn.easy {
-      background: rgba(16, 185, 129, 0.16);
-      border-color: rgba(16, 185, 129, 0.45);
-      color: #34d399;
-    }
-
-    .flip-hint {
-      margin-top: 14px;
-      font-size: 12px;
-      color: #6b7280;
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      background: rgba(59, 130, 246, 0.14);
+      color: #60a5fa;
+      border-color: rgba(59, 130, 246, 0.35);
     }
 
     /* ==========================================================================
@@ -811,16 +1008,21 @@
        ========================================================================== */
     .section {
       max-width: 1100px;
-      margin: 72px auto;
+      margin: 56px auto;
       padding: 0 20px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
+    }
+
+    .section-title.is-compact {
+      margin-bottom: 0;
     }
 
     .section-title h2 {
+      text-wrap: balance;
       font-size: clamp(28px, 4vw, 38px);
       font-weight: 700;
       color: #fff;
@@ -840,7 +1042,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 22px;
     }
 
     .theme-pill {
@@ -900,6 +1102,8 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+        scroll-padding-right: 20px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         justify-content: flex-start;
@@ -925,26 +1129,11 @@
     /* ==========================================================================
        Features Section (2x2 Bento Showcase)
        ========================================================================== */
-    .section-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-border);
-      color: var(--accent);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 14px;
-    }
 
     .features-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 18px;
     }
 
     @media (max-width: 820px) {
@@ -958,7 +1147,7 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 24px;
-      padding: 32px 28px;
+      padding: 24px 24px 22px;
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       display: flex;
@@ -977,9 +1166,9 @@
 
     .feature-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 20px;
+      gap: 14px;
+      margin-bottom: 14px;
     }
 
     .feature-icon-box {
@@ -1005,31 +1194,21 @@
       height: 24px;
     }
 
-    .feature-badge {
-      font-size: 11.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid var(--accent-border);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
 
-    .feature-body h3 {
-      font-size: 20px;
+    .feature-header h3 {
+      font-size: 19px;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 10px;
+      margin: 0;
+      line-height: 1.25;
       letter-spacing: -0.3px;
     }
 
     .feature-body p {
       font-size: 14.5px;
       color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 24px;
+      line-height: 1.6;
+      margin-bottom: 16px;
     }
 
     .feature-visual {
@@ -1178,7 +1357,7 @@
        ========================================================================== */
     .cta-section {
       max-width: 960px;
-      margin: 80px auto;
+      margin: 56px auto;
       padding: 0 20px;
       position: relative;
     }
@@ -1189,7 +1368,7 @@
         rgba(11, 16, 26, 0.95);
       border: 1px solid var(--accent-border);
       border-radius: 32px;
-      padding: 64px 32px 52px;
+      padding: 44px 32px 36px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -1215,16 +1394,16 @@
     }
 
     .cta-emblem-wrap {
-      width: 64px;
-      height: 64px;
-      border-radius: 18px;
+      width: 80px;
+      height: 80px;
+      border-radius: 22px;
       background: var(--accent-soft);
       border: 1px solid var(--accent-border);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      box-shadow: 0 8px 24px var(--accent-glow);
+      margin-bottom: 16px;
+      box-shadow: 0 10px 28px var(--accent-glow);
       transition: transform 0.25s ease;
     }
 
@@ -1233,29 +1412,15 @@
     }
 
     .cta-emblem-img {
-      width: 40px;
-      height: 40px;
+      width: 70px;
+      height: 70px;
       object-fit: contain;
-      filter: drop-shadow(0 4px 10px var(--accent-glow));
+      filter: drop-shadow(0 6px 16px var(--accent-glow));
     }
 
-    .cta-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--accent);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 20px;
-    }
 
     .cta-inner h2 {
+      text-wrap: balance;
       font-size: clamp(30px, 4.5vw, 44px);
       font-weight: 800;
       line-height: 1.15;
@@ -1268,19 +1433,20 @@
     }
 
     .cta-subtitle {
+      text-wrap: balance;
       font-size: clamp(15px, 2vw, 18px);
       color: var(--text-muted);
       max-width: 580px;
-      margin-bottom: 28px;
-      line-height: 1.55;
+      margin-bottom: 18px;
+      line-height: 1.5;
     }
 
     .cta-trust-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px 24px;
-      margin-bottom: 36px;
+      gap: 10px 22px;
+      margin-bottom: 26px;
     }
 
     .trust-item {
@@ -1296,11 +1462,6 @@
       color: var(--accent);
     }
 
-    .cta-micro-note {
-      margin-top: 24px;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
 
 
 
@@ -1309,7 +1470,7 @@
        ========================================================================== */
     footer {
       border-top: 1px solid var(--card-border);
-      padding: 40px 20px;
+      padding: 28px 20px;
       text-align: center;
       color: var(--text-muted);
       font-size: 14px;
@@ -1327,7 +1488,7 @@
     }
 
     .copyright {
-      margin-top: 16px;
+      margin-top: 10px;
       font-size: 13px;
     }
 
@@ -1364,8 +1525,8 @@
     .beta-invite-strip {
       display: flex;
       justify-content: center;
-      margin-top: -34px;
-      margin-bottom: 38px;
+      margin-top: -28px;
+      margin-bottom: 30px;
       width: 100%;
       padding: 0 16px;
     }
@@ -1717,13 +1878,17 @@
         gap: 9px;
       }
       .brand-logo-img {
-        width: 38px;
-        height: 38px;
+        width: 48px;
+        height: 48px;
       }
       .nav-right {
         gap: 8px;
       }
       .lang-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .theme-btn {
         padding: 6px 10px;
         font-size: 12px;
       }
@@ -1734,13 +1899,13 @@
 
       /* Hero Section */
       .hero {
-        margin: 22px auto 48px;
+        margin: 16px auto 36px;
         padding: 0 16px;
       }
       .pill {
         padding: 5px 14px;
         font-size: 11.5px;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         letter-spacing: 0.4px;
       }
       h1 {
@@ -1751,40 +1916,49 @@
       }
       .subtitle {
         font-size: 15px;
-        line-height: 1.5;
-        margin-bottom: 24px;
+        line-height: 1.45;
+        margin-bottom: 20px;
       }
 
       /* Store Buttons in Hero & CTA */
       .cta-buttons {
         width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 30px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        gap: 8px;
+        margin-bottom: 26px;
       }
       .btn-store {
-        width: 100%;
-        max-width: 320px;
-        padding: 11px 18px;
-        min-height: 52px;
-        border-radius: 15px;
+        flex: 1 1 0;
+        min-width: 0;
+        width: auto;
+        padding: 9px 10px;
+        min-height: 48px;
+        gap: 8px;
+        border-radius: 14px;
         justify-content: center;
       }
       .btn-store-text {
         line-height: 1.2;
       }
       .btn-sub {
-        font-size: 9px;
+        display: none;
       }
       .btn-title {
         font-size: 14px;
+        white-space: nowrap;
+      }
+      .soon-badge {
+        font-size: 8.5px;
+        padding: 2px 5px;
+        margin-left: 0;
       }
 
       /* Beta Invite Pill */
       .beta-invite-strip {
-        margin-top: -16px;
-        margin-bottom: 26px;
+        margin-top: -10px;
+        margin-bottom: 22px;
         padding: 0 10px;
       }
       .btn-beta-trigger {
@@ -1797,14 +1971,14 @@
 
       /* Interactive Flashcard Mockup */
       .hero-mockup {
-        padding: 18px 12px 16px;
+        padding: 16px 12px 14px;
         border-radius: 22px;
         max-width: 100%;
       }
       .study-counters-bar {
         gap: 8px;
         padding: 4px 10px;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         border-radius: 20px;
       }
       .counter-chip {
@@ -1815,61 +1989,67 @@
         width: 12px;
         height: 12px;
       }
-      .mockup-card {
-        padding: 18px 14px;
-        border-radius: 20px;
+      .card-stage {
+        height: 205px;
+        max-width: 100%;
+      }
+      .card-face {
+        padding: 14px 14px 12px;
+        border-radius: 18px;
       }
       .card-top-row {
-        margin-bottom: 14px;
+        margin-bottom: 8px;
       }
       .mockup-tag {
         font-size: 10px;
-        padding: 3px 8px;
+        padding: 2.5px 7px;
+      }
+      .card-answer-badge {
+        font-size: 9.5px;
+        padding: 2.5px 6px;
       }
       .audio-btn {
-        width: 38px;
-        height: 38px;
+        width: 30px;
+        height: 30px;
       }
       .mockup-question {
-        font-size: clamp(22px, 6.5vw, 26px);
+        font-size: clamp(20px, 6vw, 23px);
       }
       .mockup-transcription {
-        font-size: 13px;
-        margin-bottom: 8px;
-      }
-      .mockup-answer {
-        font-size: clamp(15px, 4.5vw, 17px);
-      }
-      .mockup-example {
-        font-size: 12.5px;
-        line-height: 1.4;
-      }
-      .mockup-rating {
-        gap: 6px;
-        margin-top: 16px;
-      }
-      .rating-btn {
-        padding: 8px 2px;
-        min-height: 52px;
-        border-radius: 14px;
         font-size: 12px;
       }
-      .rating-btn .time {
-        font-size: 10.5px;
+      .mockup-answer {
+        font-size: clamp(17px, 5vw, 19px);
       }
-      .flip-hint {
+      .mockup-example {
+        font-size: 11.5px;
+        line-height: 1.35;
+      }
+      .mockup-rating {
+        max-width: 100%;
+        gap: 6px;
         margin-top: 12px;
-        font-size: 11px;
+      }
+      .rating-btn {
+        padding: 7px 2px;
+        border-radius: 12px;
+        font-size: 11.5px;
+      }
+      .rating-btn .time {
+        font-size: 9.5px;
+      }
+      .card-bottom-hint {
+        font-size: 10px;
         gap: 4px;
       }
 
       /* Sections & Bento Grid */
       .section {
-        margin: 50px auto;
+        margin: 40px auto;
         padding: 0 16px;
       }
       .section-title {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
       }
       .section-title h2 {
         font-size: clamp(23px, 6vw, 28px);
@@ -1882,11 +2062,8 @@
         gap: 14px;
       }
       .feature-card {
-        padding: 22px 18px;
+        padding: 18px 16px 16px;
         border-radius: 20px;
-      }
-      .feature-header {
-        margin-bottom: 14px;
       }
       .feature-icon-box {
         width: 42px;
@@ -1897,18 +2074,17 @@
         width: 20px;
         height: 20px;
       }
-      .feature-badge {
-        font-size: 10.5px;
-        padding: 3px 8px;
+      .feature-header {
+        gap: 12px;
+        margin-bottom: 12px;
       }
-      .feature-body h3 {
-        font-size: 18px;
-        margin-bottom: 8px;
+      .feature-header h3 {
+        font-size: 17px;
       }
       .feature-body p {
         font-size: 13.5px;
-        line-height: 1.55;
-        margin-bottom: 18px;
+        line-height: 1.5;
+        margin-bottom: 14px;
       }
       .visual-direction-demo {
         gap: 6px;
@@ -1944,27 +2120,22 @@
 
       /* CTA Section */
       .cta-section {
-        margin: 46px auto;
+        margin: 36px auto;
         padding: 0 16px;
       }
       .cta-inner {
-        padding: 36px 18px 28px;
+        padding: 28px 18px 22px;
         border-radius: 24px;
       }
       .cta-emblem-wrap {
-        width: 52px;
-        height: 52px;
-        border-radius: 16px;
+        width: 66px;
+        height: 66px;
+        border-radius: 18px;
         margin-bottom: 16px;
       }
       .cta-emblem-img {
-        width: 32px;
-        height: 32px;
-      }
-      .cta-pill {
-        padding: 4px 12px;
-        font-size: 11px;
-        margin-bottom: 16px;
+        width: 58px;
+        height: 58px;
       }
       .cta-inner h2 {
         font-size: clamp(24px, 6.5vw, 32px);
@@ -1973,22 +2144,15 @@
       }
       .cta-subtitle {
         font-size: 14px;
-        line-height: 1.5;
-        margin-bottom: 22px;
+        line-height: 1.45;
+        margin-bottom: 16px;
       }
       .cta-trust-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 26px;
+        gap: 8px 16px;
+        margin-bottom: 20px;
       }
       .trust-item {
         font-size: 12.5px;
-      }
-      .cta-micro-note {
-        font-size: 12px;
-        line-height: 1.45;
-        margin-top: 20px;
       }
 
       /* Footer */
@@ -2079,6 +2243,19 @@
         margin-top: 14px;
       }
     }
+
+    @media (max-width: 520px) {
+      #currentThemeLabel {
+        display: none;
+      }
+      .theme-btn {
+        padding: 6px 8px;
+        gap: 5px;
+      }
+      .theme-dropdown {
+        right: -32px;
+      }
+    }
   </style>
 </head>
 <body data-theme="emerald">
@@ -2086,7 +2263,7 @@
   <!-- Navigation Header (Sticky, Blur & Mobile Optimized) -->
   <header class="site-header">
     <nav>
-      <a href="#" class="brand">
+      <a href="#" class="brand" onclick="scrollToTop(event)" aria-label="Nikaro - Scroll to top">
         <img id="headerLogoImg" class="brand-logo-img" src="assets/icons/emerald.svg" alt="Nikaro Logo">
         <span>Nikaro</span>
       </a>
@@ -2095,6 +2272,73 @@
           <a href="#features" data-i18n="nav_features">Features</a>
           <a href="#themes" data-i18n="nav_themes">Themes</a>
           <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
+        </div>
+
+        <!-- Compact Theme Switcher -->
+        <div class="theme-switcher">
+          <button type="button" class="theme-btn" id="themeBtn" onclick="toggleThemeDropdown(event)" aria-label="Select theme" aria-expanded="false">
+            <span class="theme-btn-dot dot-emerald" id="currentThemeDot"></span>
+            <span id="currentThemeLabel">Emerald</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="theme-dropdown" id="themeDropdown">
+            <div class="theme-option is-active" data-theme-key="emerald" onclick="switchTheme('emerald')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-emerald"></span>
+                <span>Emerald</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="sapphire" onclick="switchTheme('sapphire')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-sapphire"></span>
+                <span>Sapphire</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="ruby" onclick="switchTheme('ruby')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-ruby"></span>
+                <span>Ruby</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="amber" onclick="switchTheme('amber')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-amber"></span>
+                <span>Amber</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="violet" onclick="switchTheme('violet')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-violet"></span>
+                <span>Violet</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="quartz" onclick="switchTheme('quartz')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-quartz"></span>
+                <span>Quartz</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="silver" onclick="switchTheme('silver')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-silver"></span>
+                <span>Silver</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+            <div class="theme-option" data-theme-key="gold" onclick="switchTheme('gold')">
+              <div class="theme-option-left">
+                <span class="theme-dot dot-gold"></span>
+                <span>Gold</span>
+              </div>
+              <span class="theme-check">✓</span>
+            </div>
+          </div>
         </div>
 
         <!-- Compact Language Switcher -->
@@ -2154,7 +2398,7 @@
     </div>
     <h1 data-i18n="hero_title">Master Any Knowledge.<br>Never Forget.</h1>
     <p class="subtitle" data-i18n="hero_subtitle">
-      Nikaro combines state-of-the-art memory science with a distraction-free, privacy-first design. Study languages, prepare for exams, and retain knowledge for life.
+      Memory science, zero clutter, full privacy. Learn languages, ace exams, remember for life.
     </p>
 
     <!-- Store Buttons -->
@@ -2205,57 +2449,85 @@
         </div>
       </div>
 
-      <!-- Flippable Card -->
-      <div class="mockup-card" id="demoCard" onclick="toggleCard()">
-        <div class="card-top-row">
-          <span class="mockup-tag" id="cardCategory">Spanish &bull; Fluency</span>
-          <button class="audio-btn" type="button" title="Pronounce (R)" onclick="event.stopPropagation(); playPronounce();">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-            </svg>
-          </button>
-        </div>
+      <!-- 3D Flippable Card Stage (App-Accurate) -->
+      <div class="card-stage" id="cardStage" onclick="toggleCard()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard();}" role="button" tabindex="0" aria-label="Flashcard - Click to flip">
+        <div class="card-flipper">
+          <!-- Front Face -->
+          <div class="card-face card-front">
+            <div class="card-top-row">
+              <div class="card-badge-wrap">
+                <span class="card-status-dot"></span>
+                <span class="mockup-tag" id="cardCategoryFront">Spanish &bull; Fluency</span>
+              </div>
+              <button class="audio-btn" type="button" title="Pronounce (R)" onclick="event.stopPropagation(); playPronounce(false);" aria-label="Pronounce">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </button>
+            </div>
 
-        <div class="mockup-front">
-          <div class="mockup-question" id="cardPrompt">la serenidad</div>
-          <div class="mockup-transcription" id="cardIpa">[la se.ɾe.niˈðað]</div>
-        </div>
+            <div class="card-center">
+              <div class="mockup-question" id="cardPrompt">la serenidad</div>
+              <div class="mockup-transcription" id="cardIpa">[la se.ɾe.niˈðað]</div>
+            </div>
 
-        <div class="mockup-back" id="cardBack">
-          <div class="mockup-answer" id="cardAnswer">serenity, tranquility</div>
-          <div class="mockup-example" id="cardExample">"Mantuvo la serenidad en todo momento."</div>
-        </div>
-
-        <div class="mockup-rating">
-          <div class="rating-btn again" onclick="event.stopPropagation(); submitReview(1);">
-            <span data-i18n="card_again">Again</span>
-            <span class="time" id="timeAgain">10m</span>
+            <div class="card-bottom-hint">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+              </svg>
+              <span data-i18n="card_flip_hint">Tap card or press [Space] &bull; Rate [1, 2, 3]</span>
+            </div>
           </div>
-          <div class="rating-btn good" onclick="event.stopPropagation(); submitReview(2);">
-            <span data-i18n="card_good">Good</span>
-            <span class="time" id="timeGood">4d</span>
-          </div>
-          <div class="rating-btn easy" onclick="event.stopPropagation(); submitReview(3);">
-            <span data-i18n="card_easy">Easy</span>
-            <span class="time" id="timeEasy">14d</span>
-          </div>
-        </div>
 
-        <div class="flip-hint">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
-          </svg>
-          <span data-i18n="card_flip_hint">Tap card to reveal &bull; Rate to load next</span>
+          <!-- Back Face -->
+          <div class="card-face card-back">
+            <div class="card-top-row">
+              <div class="card-badge-wrap">
+                <span class="card-answer-badge" data-i18n="card_badge_answer">Answer</span>
+                <span class="mockup-tag subtle" id="cardCategoryBack">Spanish &bull; Fluency</span>
+              </div>
+              <button class="audio-btn" type="button" title="Pronounce (R)" onclick="event.stopPropagation(); playPronounce(true);" aria-label="Pronounce">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="card-center">
+              <div class="mockup-answer" id="cardAnswer">serenity, tranquility</div>
+              <div class="mockup-example" id="cardExample">"Mantuvo la serenidad en todo momento."</div>
+            </div>
+
+            <div class="card-bottom-hint back-hint">
+              <span data-i18n="card_rate_hint">Rate memory below &bull; [1, 2, 3]</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- 3 Rating Buttons Below Card -->
+      <div class="mockup-rating">
+        <button type="button" class="rating-btn again" onclick="submitReview(1)" aria-label="Rate Again">
+          <span data-i18n="card_again">Again</span>
+          <span class="time" id="timeAgain">10m</span>
+        </button>
+        <button type="button" class="rating-btn good" onclick="submitReview(2)" aria-label="Rate Good">
+          <span data-i18n="card_good">Good</span>
+          <span class="time" id="timeGood">4d</span>
+        </button>
+        <button type="button" class="rating-btn easy" onclick="submitReview(3)" aria-label="Rate Easy">
+          <span data-i18n="card_easy">Easy</span>
+          <span class="time" id="timeEasy">14d</span>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- Gemstone Themes Strip (Compact, Clean & Interactive) -->
   <section class="section" id="themes">
-    <div class="section-title">
+    <div class="section-title is-compact">
       <h2 data-i18n="themes_title">Handcrafted Gemstone Themes</h2>
-      <p data-i18n="themes_subtitle">Study in an environment tailored to your aesthetic preference, day or night.</p>
+      <p data-i18n="themes_subtitle">Study in a look that suits you, day or night.</p>
     </div>
 
     <div class="themes-container">
@@ -2297,15 +2569,8 @@
   <!-- Features Grid (Reworked 2x2 Bento Showcase) -->
   <section class="section" id="features">
     <div class="section-title">
-      <div class="section-pill">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 6v6l4 2"></path>
-        </svg>
-        <span data-i18n="feat_section_pill">Cognitive Science Architecture</span>
-      </div>
-      <h2 data-i18n="feat_section_title">Engineered for Long-Term Memory</h2>
-      <p data-i18n="feat_section_subtitle">Built from the ground up for speed, focus, and uncompromising data privacy.</p>
+      <h2 data-i18n="feat_section_title">Engineered for <span style="white-space: nowrap;">Long-Term</span> Memory</h2>
+      <p data-i18n="feat_section_subtitle">Fast, focused and private by design.</p>
     </div>
 
     <div class="features-grid">
@@ -2318,12 +2583,11 @@
               <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/>
             </svg>
           </div>
-          <span class="feature-badge" data-i18n="feat_fsrs_badge">FSRS-v5 Core</span>
+          <h3 data-i18n="feat_fsrs_title">Pure FSRS Scheduling</h3>
         </div>
         <div class="feature-body">
-          <h3 data-i18n="feat_fsrs_title">Pure FSRS Scheduling</h3>
           <p data-i18n="feat_fsrs_desc">
-            Powered by modern memory science via high-performance Rust FFI. Reviews are scheduled right before you forget, cutting study time by over 30% without artificial learning steps or heuristic caps.
+            Modern memory science schedules each review right before you forget: about 30% less study time, no artificial learning steps.
           </p>
         </div>
         <div class="feature-visual">
@@ -2350,12 +2614,11 @@
               <path d="M9 11v6"/>
             </svg>
           </div>
-          <span class="feature-badge" data-i18n="feat_twoway_badge">Bi-Directional SRS</span>
+          <h3 data-i18n="feat_twoway_title">Two-Way Card Mastery</h3>
         </div>
         <div class="feature-body">
-          <h3 data-i18n="feat_twoway_title">Two-Way Card Mastery</h3>
           <p data-i18n="feat_twoway_desc">
-            Create a single Note and study it bidirectionally (Front ⇄ Back). Each direction maintains its own independent stability, reps, and review history without duplicating notes or splitting stats.
+            One note, studied both ways (Front ⇄ Back). Each direction keeps its own schedule and stats.
           </p>
         </div>
         <div class="feature-visual">
@@ -2383,12 +2646,11 @@
               <path d="M10 11V9a2 2 0 1 1 4 0v2"/>
             </svg>
           </div>
-          <span class="feature-badge" data-i18n="feat_priv_badge">Zero Tracking</span>
+          <h3 data-i18n="feat_priv_title">100% Offline-First & Private</h3>
         </div>
         <div class="feature-body">
-          <h3 data-i18n="feat_priv_title">100% Offline-First & Private</h3>
           <p data-i18n="feat_priv_desc">
-            All decks, cards, media, and review logs remain strictly on your device inside an encrypted local database. Zero mandatory cloud accounts, zero tracking, and instant offline responsiveness.
+            Decks, media and review logs stay on your device. No account, no tracking, instant offline.
           </p>
         </div>
         <div class="feature-visual">
@@ -2409,12 +2671,11 @@
               <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
             </svg>
           </div>
-          <span class="feature-badge" data-i18n="feat_audio_badge">TTS & Data Control</span>
+          <h3 data-i18n="feat_audio_title">Audio &amp; CSV Freedom</h3>
         </div>
         <div class="feature-body">
-          <h3 data-i18n="feat_audio_title">Audio Pronunciation & CSV Freedom</h3>
           <p data-i18n="feat_audio_desc">
-            Instant on-device speech synthesis across 14+ languages to perfect your accent, plus background isolate-powered CSV export and import whenever you want complete portability.
+            On-device speech in 14+ languages, plus fast CSV import and export. Your data stays portable.
           </p>
         </div>
         <div class="feature-visual">
@@ -2437,30 +2698,23 @@
         <img id="ctaLogoImg" class="cta-emblem-img" src="assets/icons/emerald.svg" alt="Nikaro Gemstone Emblem">
       </div>
 
-      <div class="cta-pill">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/>
-        </svg>
-        <span data-i18n="cta_pill">Zero Paywalls &bull; 100% Offline Core</span>
-      </div>
-
       <h2 data-i18n="cta_title">Ready to Learn Smarter?</h2>
       <p class="cta-subtitle" data-i18n="cta_subtitle">
-        Start remembering more in less time with Nikaro. Free for Android & iOS.
+        Remember more in less time. Free for Android &amp; iOS.
       </p>
 
       <div class="cta-trust-row">
         <div class="trust-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span data-i18n="cta_trust1">No Account Required</span>
+          <span data-i18n="cta_trust1">No account</span>
         </div>
         <div class="trust-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span data-i18n="cta_trust2">Pure FSRS Algorithm</span>
+          <span data-i18n="cta_trust2">Pure FSRS</span>
         </div>
         <div class="trust-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span data-i18n="cta_trust3">Zero Ads or Telemetry</span>
+          <span data-i18n="cta_trust3">No ads or tracking</span>
         </div>
       </div>
 
@@ -2492,20 +2746,14 @@
           <svg class="beta-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
         </button>
       </div>
-
-      <div class="cta-micro-note" data-i18n="cta_note">
-        Launching soon on Google Play & App Store &bull; Try the interactive demo card above
-      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div>
-      <a href="#features" data-i18n="nav_features">Features</a>
-      <a href="#themes" data-i18n="nav_themes">Themes</a>
       <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
-      <a href="mailto:nikaro.app@gmail.com"><span data-i18n="footer_support">Support</span> (nikaro.app@gmail.com)</a>
+      <a href="mailto:nikaro.app@gmail.com" data-i18n="footer_support">Support</a>
     </div>
     <div class="copyright">
       &copy; 2026 Nikaro. <span data-i18n="footer_rights">All rights reserved.</span>
@@ -2583,7 +2831,7 @@
         nav_beta: "Join Closed Beta",
         hero_pill: "Powered by Pure FSRS Algorithm",
         hero_title: "Master Any Knowledge.<br>Never Forget.",
-        hero_subtitle: "Nikaro combines state-of-the-art memory science with a distraction-free, privacy-first design. Study languages, prepare for exams, and retain knowledge for life.",
+        hero_subtitle: "Memory science, zero clutter, full privacy. Learn languages, ace exams, remember for life.",
         store_get_it_on: "GET IT ON",
         store_download_on: "DOWNLOAD ON THE",
         badge_soon: "Soon",
@@ -2593,43 +2841,38 @@
         card_again: "Again",
         card_good: "Good",
         card_easy: "Easy",
+        card_badge_answer: "Answer",
         card_flip_hint: "Tap card or press [Space] &bull; Rate [1, 2, 3]",
+        card_rate_hint: "Rate memory below &bull; [1, 2, 3]",
         themes_title: "Handcrafted Gemstone Themes",
-        themes_subtitle: "Study in an environment tailored to your aesthetic preference, day or night.",
-        feat_section_pill: "Cognitive Science Architecture",
-        feat_section_title: "Engineered for Long-Term Memory",
-        feat_section_subtitle: "Built from the ground up for speed, focus, and uncompromising data privacy.",
-        feat_fsrs_badge: "FSRS-v5 Core",
+        themes_subtitle: "Study in a look that suits you, day or night.",
+        feat_section_title: "Engineered for <span style=\"white-space: nowrap;\">Long-Term</span> Memory",
+        feat_section_subtitle: "Fast, focused and private by design.",
         feat_fsrs_title: "Pure FSRS Scheduling",
-        feat_fsrs_desc: "Powered by modern memory science via high-performance Rust FFI. Reviews are scheduled right before you forget, cutting study time by over 30% without artificial learning steps or heuristic caps.",
+        feat_fsrs_desc: "Modern memory science schedules each review right before you forget: about 30% less study time, no artificial learning steps.",
         feat_fsrs_retention: "Retention Target",
         feat_fsrs_efficiency: "Efficiency",
         feat_fsrs_recall: "+30% Recall",
-        feat_twoway_badge: "Bi-Directional SRS",
         feat_twoway_title: "Two-Way Card Mastery",
-        feat_twoway_desc: "Create a single Note and study it bidirectionally (Front ⇄ Back). Each direction maintains its own independent stability, reps, and review history without duplicating notes or splitting stats.",
+        feat_twoway_desc: "One note, studied both ways (Front ⇄ Back). Each direction keeps its own schedule and stats.",
         feat_twoway_direct_tag: "Direct",
         feat_twoway_direct_val: "Front → Back",
         feat_twoway_reverse_tag: "Reverse",
         feat_twoway_reverse_val: "Back → Front",
-        feat_priv_badge: "Zero Tracking",
         feat_priv_title: "100% Offline-First & Private",
-        feat_priv_desc: "All decks, cards, media, and review logs remain strictly on your device inside an encrypted local database. Zero mandatory cloud accounts, zero tracking, and instant offline responsiveness.",
+        feat_priv_desc: "Decks, media and review logs stay on your device. No account, no tracking, instant offline.",
         feat_priv_chip1: "🔒 Local SQLite",
         feat_priv_chip2: "🚫 No Telemetry",
         feat_priv_chip3: "⚡ 0ms Latency",
-        feat_audio_badge: "TTS & Data Control",
-        feat_audio_title: "Audio Pronunciation & CSV Freedom",
-        feat_audio_desc: "Instant on-device speech synthesis across 14+ languages to perfect your accent, plus background isolate-powered CSV export and import whenever you want complete portability.",
+        feat_audio_title: "Audio &amp; CSV Freedom",
+        feat_audio_desc: "On-device speech in 14+ languages, plus fast CSV import and export. Your data stays portable.",
         feat_audio_chip1: "14+ Languages",
         feat_audio_chip2: "CSV Import / Export",
-        cta_pill: "Zero Paywalls &bull; 100% Offline Core",
         cta_title: "Ready to Learn Smarter?",
-        cta_subtitle: "Start remembering more in less time with Nikaro. Free for Android & iOS.",
-        cta_trust1: "No Account Required",
-        cta_trust2: "Pure FSRS Algorithm",
-        cta_trust3: "Zero Ads or Telemetry",
-        cta_note: "Launching soon on Google Play & App Store &bull; Try the interactive demo card above",
+        cta_subtitle: "Remember more in less time. Free for Android &amp; iOS.",
+        cta_trust1: "No account",
+        cta_trust2: "Pure FSRS",
+        cta_trust3: "No ads or tracking",
         footer_support: "Support",
         footer_rights: "All rights reserved.",
         toast_prefix: "Nikaro is preparing for launch on",
@@ -2657,7 +2900,7 @@
         nav_beta: "Закрытый бета-тест",
         hero_pill: "На базе чистого алгоритма FSRS",
         hero_title: "Учите любые знания.<br>Забудьте про забывание.",
-        hero_subtitle: "Nikaro объединяет современную науку о памяти с дизайном без отвлекающих факторов и абсолютной приватностью. Изучайте языки, готовьтесь к экзаменам и сохраняйте знания на всю жизнь.",
+        hero_subtitle: "Наука о памяти, ничего лишнего, полная приватность. Учите языки, готовьтесь к экзаменам, помните всю жизнь.",
         store_get_it_on: "СКОРО В",
         store_download_on: "СКОРО В",
         badge_soon: "Скоро",
@@ -2667,43 +2910,38 @@
         card_again: "Снова",
         card_good: "Хорошо",
         card_easy: "Легко",
+        card_badge_answer: "Ответ",
         card_flip_hint: "Нажмите на карточку или [Пробел] &bull; Оцените [1, 2, 3]",
+        card_rate_hint: "Оцените память ниже &bull; [1, 2, 3]",
         themes_title: "Авторские темы самоцветов",
-        themes_subtitle: "Учитесь в среде, созданной под ваш эстетический вкус — днем и ночью.",
-        feat_section_pill: "Архитектура когнитивной науки",
+        themes_subtitle: "Учитесь в оформлении по вкусу — днём и ночью.",
         feat_section_title: "Создано для долговременной памяти",
-        feat_section_subtitle: "Спроектировано с нуля для скорости, концентрации и бескомпромиссной приватности данных.",
-        feat_fsrs_badge: "FSRS-v5 Core",
+        feat_section_subtitle: "Быстро, сосредоточенно и приватно.",
         feat_fsrs_title: "Чистый алгоритм FSRS",
-        feat_fsrs_desc: "Работает на базе современной науки о памяти через высокоскоростной Rust FFI. Повторения назначаются ровно перед тем, как вы забудете, сокращая время учебы более чем на 30% без искусственных шагов и эвристик.",
+        feat_fsrs_desc: "Современная наука о памяти назначает повтор прямо перед забыванием: примерно на 30% меньше времени на учёбу, без искусственных шагов.",
         feat_fsrs_retention: "Цель удержания",
         feat_fsrs_efficiency: "Эффективность",
         feat_fsrs_recall: "+30% памяти",
-        feat_twoway_badge: "Двусторонний SRS",
         feat_twoway_title: "Двустороннее мастерство",
-        feat_twoway_desc: "Создавайте одну Заметку и учите ее в обоих направлениях (Лицо ⇄ Оборот). Каждое направление сохраняет собственную стабильность, историю и сложность без дублирования карточек.",
+        feat_twoway_desc: "Одна заметка, два направления (Лицо ⇄ Оборот). У каждого своё расписание и статистика.",
         feat_twoway_direct_tag: "Прямая",
         feat_twoway_direct_val: "Лицо → Оборот",
         feat_twoway_reverse_tag: "Обратная",
         feat_twoway_reverse_val: "Оборот → Лицо",
-        feat_priv_badge: "Ноль слежки",
         feat_priv_title: "100% Оффлайн и Приватность",
-        feat_priv_desc: "Все колоды, карточки, медиа и логи повторений хранятся исключительно на вашем устройстве в зашифрованной локальной базе. Без обязательных аккаунтов, без телеметрии и с мгновенным откликом.",
+        feat_priv_desc: "Колоды, медиа и история повторений хранятся только на устройстве. Без аккаунта и слежки, мгновенно и офлайн.",
         feat_priv_chip1: "🔒 Локальная SQLite",
         feat_priv_chip2: "🚫 Без телеметрии",
         feat_priv_chip3: "⚡ 0мс задержки",
-        feat_audio_badge: "TTS и Контроль",
         feat_audio_title: "Озвучка и Свобода CSV",
-        feat_audio_desc: "Мгновенный синтез речи прямо на устройстве для 14+ языков для идеального произношения, а также изолированный быстрый экспорт и импорт CSV для полного контроля над данными.",
+        feat_audio_desc: "Озвучка на устройстве для 14+ языков, быстрый импорт и экспорт CSV. Данные всегда с вами.",
         feat_audio_chip1: "14+ Языков",
         feat_audio_chip2: "Импорт / Экспорт CSV",
-        cta_pill: "Без пейволлов &bull; 100% Оффлайн",
         cta_title: "Готовы учиться эффективнее?",
-        cta_subtitle: "Начните запоминать больше за меньшее время с Nikaro. Бесплатно для Android и iOS.",
-        cta_trust1: "Аккаунт не требуется",
-        cta_trust2: "Чистый алгоритм FSRS",
-        cta_trust3: "Без рекламы и телеметрии",
-        cta_note: "Скоро в Google Play и App Store &bull; Попробуйте интерактивную карточку выше",
+        cta_subtitle: "Запоминайте больше за меньшее время. Бесплатно для Android и iOS.",
+        cta_trust1: "Без аккаунта",
+        cta_trust2: "Чистый FSRS",
+        cta_trust3: "Без рекламы и слежки",
         footer_support: "Поддержка",
         footer_rights: "Все права защищены.",
         toast_prefix: "Nikaro готовится к запуску в",
@@ -2731,7 +2969,7 @@
         nav_beta: "Закритий бета-тест",
         hero_pill: "На базі чистого алгоритму FSRS",
         hero_title: "Вивчайте будь-які знання.<br>Забудьте про забування.",
-        hero_subtitle: "Nikaro поєднує передову науку про пам'ять із дизайном без зайвих деталей і повною приватністю. Вивчайте мови, готуйтеся до іспитів і зберігайте знання назавжди.",
+        hero_subtitle: "Наука про пам'ять, нічого зайвого, повна приватність. Вивчайте мови, готуйтеся до іспитів, пам'ятайте все життя.",
         store_get_it_on: "НЕЗАБАРОМ У",
         store_download_on: "НЕЗАБАРОМ У",
         badge_soon: "Скоро",
@@ -2741,43 +2979,38 @@
         card_again: "Знову",
         card_good: "Добре",
         card_easy: "Легко",
+        card_badge_answer: "Відповідь",
         card_flip_hint: "Натисніть на картку або [Пробіл] &bull; Оцініть [1, 2, 3]",
+        card_rate_hint: "Оцініть пам'ять нижче &bull; [1, 2, 3]",
         themes_title: "Авторські теми самоцвітів",
-        themes_subtitle: "Навчайтеся в середовищі, створеному під ваш естетичний смак — удень і вночі.",
-        feat_section_pill: "Архітектура когнітивної науки",
+        themes_subtitle: "Навчайтеся в оформленні на ваш смак — удень і вночі.",
         feat_section_title: "Створено для довготривалої пам'яті",
-        feat_section_subtitle: "Спроєктовано з нуля для швидкості, концентрації та безкомпромісної приватності даних.",
-        feat_fsrs_badge: "FSRS-v5 Core",
+        feat_section_subtitle: "Швидко, зосереджено та приватно.",
         feat_fsrs_title: "Чистий алгоритм FSRS",
-        feat_fsrs_desc: "Працює на базі сучасної науки про пам'ять через високошвидкісний Rust FFI. Повторення призначаються саме перед тим, як ви забудете, заощаджуючи понад 30% часу без штучних кроків та евристичних лімітів.",
+        feat_fsrs_desc: "Сучасна наука про пам'ять призначає повтор саме перед забуванням: приблизно на 30% менше часу на навчання, без штучних кроків.",
         feat_fsrs_retention: "Ціль збереження",
         feat_fsrs_efficiency: "Ефективність",
         feat_fsrs_recall: "+30% пам'яті",
-        feat_twoway_badge: "Двосторонній SRS",
         feat_twoway_title: "Двостороннє засвоєння",
-        feat_twoway_desc: "Створюйте одну Замітку та вивчайте її в обох напрямках (Лице ⇄ Зворот). Кожен напрямок зберігає власну стабільність, історію та складність без дублювання карток.",
+        feat_twoway_desc: "Одна замітка, два напрямки (Лице ⇄ Зворот). Кожен має власний розклад і статистику.",
         feat_twoway_direct_tag: "Пряма",
         feat_twoway_direct_val: "Лице → Зворот",
         feat_twoway_reverse_tag: "Зворотна",
         feat_twoway_reverse_val: "Зворот → Лице",
-        feat_priv_badge: "Нуль стеження",
         feat_priv_title: "100% Офлайн та Приватність",
-        feat_priv_desc: "Усі колоди, картки, медіа та логи повторень зберігаються виключно на вашому пристрої в зашифрованій локальній базі. Без обов'язкових акаунтів, без телеметрії та з миттєвим відгуком.",
+        feat_priv_desc: "Колоди, медіа та історія повторень зберігаються лише на пристрої. Без акаунта й стеження, миттєво й офлайн.",
         feat_priv_chip1: "🔒 Локальна SQLite",
         feat_priv_chip2: "🚫 Без телеметрії",
         feat_priv_chip3: "⚡ 0мс затримки",
-        feat_audio_badge: "TTS та Контроль",
         feat_audio_title: "Озвучення та Свобода CSV",
-        feat_audio_desc: "Миттєвий синтез мовлення прямо на пристрої для 14+ мов для ідеальної вимови, а також ізольований швидкий експорт та імпорт CSV для повного контролю над даними.",
+        feat_audio_desc: "Озвучення на пристрої для 14+ мов, швидкий імпорт та експорт CSV. Дані завжди з вами.",
         feat_audio_chip1: "14+ Мов",
         feat_audio_chip2: "Імпорт / Експорт CSV",
-        cta_pill: "Без пейволів &bull; 100% Офлайн",
         cta_title: "Готові вчитися ефективніше?",
-        cta_subtitle: "Почніть запам'ятовувати більше за менший час із Nikaro. Безкоштовно для Android та iOS.",
-        cta_trust1: "Акаунт не потрібен",
-        cta_trust2: "Чистий алгоритм FSRS",
-        cta_trust3: "Без реклами та телеметрії",
-        cta_note: "Незабаром у Google Play та App Store &bull; Спробуйте інтерактивну картку вище",
+        cta_subtitle: "Запам'ятовуйте більше за менший час. Безкоштовно для Android та iOS.",
+        cta_trust1: "Без акаунта",
+        cta_trust2: "Чистий FSRS",
+        cta_trust3: "Без реклами та стеження",
         footer_support: "Підтримка",
         footer_rights: "Усі права захищені.",
         toast_prefix: "Nikaro готується до запуску в",
@@ -2891,62 +3124,78 @@
 
     function renderCurrentCard() {
       const card = sampleCards[currentCardIndex];
-      const categoryEl = document.getElementById('cardCategory');
+      if (!card) return;
+
+      const categoryFront = document.getElementById('cardCategoryFront');
+      const categoryBack = document.getElementById('cardCategoryBack');
       const promptEl = document.getElementById('cardPrompt');
       const ipaEl = document.getElementById('cardIpa');
-      const backEl = document.getElementById('cardBack');
+      const answerEl = document.getElementById('cardAnswer');
+      const exampleEl = document.getElementById('cardExample');
 
-      if (!card || !promptEl) return;
-
-      categoryEl.textContent = getCardCategory(card);
+      const cat = getCardCategory(card);
       const meaning = getCardMeaning(card);
 
-      if (isFlipped) {
-        promptEl.textContent = meaning;
-        ipaEl.textContent = "";
-        backEl.innerHTML = `<div class="mockup-answer">${card.prompt}</div><div class="mockup-example">${card.example}</div>`;
-      } else {
-        promptEl.textContent = card.prompt;
-        ipaEl.textContent = card.ipa;
-        backEl.innerHTML = `<div class="mockup-answer">${meaning}</div><div class="mockup-example">${card.example}</div>`;
-      }
+      if (categoryFront) categoryFront.textContent = cat;
+      if (categoryBack) categoryBack.textContent = cat;
+      if (promptEl) promptEl.textContent = card.prompt;
+      if (ipaEl) ipaEl.textContent = card.ipa;
+      if (answerEl) answerEl.textContent = meaning;
+      if (exampleEl) exampleEl.textContent = card.example;
 
-      document.getElementById('timeAgain').textContent = card.times[0];
-      document.getElementById('timeGood').textContent = card.times[1];
-      document.getElementById('timeEasy').textContent = card.times[2];
+      const timeAgain = document.getElementById('timeAgain');
+      const timeGood = document.getElementById('timeGood');
+      const timeEasy = document.getElementById('timeEasy');
+
+      if (timeAgain) timeAgain.textContent = card.times[0];
+      if (timeGood) timeGood.textContent = card.times[1];
+      if (timeEasy) timeEasy.textContent = card.times[2];
     }
 
     function toggleCard() {
       isFlipped = !isFlipped;
-      renderCurrentCard();
+      const stage = document.getElementById('cardStage');
+      if (stage) {
+        stage.classList.toggle('is-flipped', isFlipped);
+      }
     }
 
     function submitReview(rating) {
       if (reviewCardsCount > 0) {
         reviewCardsCount--;
         const t = translations[currentLang] || translations.en;
-        document.getElementById('counterReview').textContent = `${reviewCardsCount} ${currentLang === 'en' ? 'Due' : 'Повт.'}`;
+        const dueEl = document.getElementById('counterReview');
+        if (dueEl) dueEl.textContent = `${reviewCardsCount} ${currentLang === 'en' ? 'Due' : 'Повт.'}`;
       }
 
-      const card = document.getElementById('demoCard');
-      card.style.transform = 'scale(0.96)';
-      card.style.opacity = '0.5';
+      const stage = document.getElementById('cardStage');
+      if (stage) {
+        stage.style.transform = 'scale(0.96)';
+        stage.style.opacity = '0.6';
+      }
 
       setTimeout(() => {
-        currentCardIndex = (currentCardIndex + 1) % sampleCards.length;
         isFlipped = false;
+        if (stage) {
+          stage.classList.remove('is-flipped');
+        }
+        currentCardIndex = (currentCardIndex + 1) % sampleCards.length;
         renderCurrentCard();
-        card.style.transform = '';
-        card.style.opacity = '1';
-      }, 150);
+        if (stage) {
+          stage.style.transform = '';
+          stage.style.opacity = '1';
+        }
+      }, 180);
     }
 
-    function playPronounce() {
+    function playPronounce(forBack = false) {
       const current = sampleCards[currentCardIndex];
-      if ('speechSynthesis' in window) {
+      if ('speechSynthesis' in window && current) {
         window.speechSynthesis.cancel();
-        const text = isFlipped ? getCardMeaning(current) : current.prompt;
-        const lang = isFlipped ? (currentLang === 'ru' ? 'ru-RU' : currentLang === 'uk' ? 'uk-UA' : 'en-US') : current.lang;
+        const text = forBack ? getCardMeaning(current) : current.prompt;
+        const lang = forBack
+          ? (currentLang === 'ru' ? 'ru-RU' : currentLang === 'uk' ? 'uk-UA' : 'en-US')
+          : current.lang;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = lang;
         utterance.rate = 0.9;
@@ -2990,9 +3239,41 @@
       renderCurrentCard();
     }
 
-    function toggleLangDropdown(event) {
-      event.stopPropagation();
+    function scrollToTop(event) {
+      if (event) event.preventDefault();
       closeMobileMenu();
+      const themeDropdown = document.getElementById('themeDropdown');
+      if (themeDropdown) {
+        themeDropdown.classList.remove('is-open');
+        const themeBtn = document.getElementById('themeBtn');
+        if (themeBtn) themeBtn.setAttribute('aria-expanded', 'false');
+      }
+      const langDropdown = document.getElementById('langDropdown');
+      if (langDropdown) langDropdown.classList.remove('is-open');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleThemeDropdown(event) {
+      if (event) event.stopPropagation();
+      closeMobileMenu();
+      const langDropdown = document.getElementById('langDropdown');
+      if (langDropdown) langDropdown.classList.remove('is-open');
+      const dropdown = document.getElementById('themeDropdown');
+      if (!dropdown) return;
+      const isOpen = dropdown.classList.toggle('is-open');
+      const themeBtn = document.getElementById('themeBtn');
+      if (themeBtn) themeBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    function toggleLangDropdown(event) {
+      if (event) event.stopPropagation();
+      closeMobileMenu();
+      const themeDropdown = document.getElementById('themeDropdown');
+      if (themeDropdown) {
+        themeDropdown.classList.remove('is-open');
+        const themeBtn = document.getElementById('themeBtn');
+        if (themeBtn) themeBtn.setAttribute('aria-expanded', 'false');
+      }
       const dropdown = document.getElementById('langDropdown');
       if (dropdown) dropdown.classList.toggle('is-open');
     }
@@ -3001,6 +3282,12 @@
       if (event) event.stopPropagation();
       const dropdown = document.getElementById('langDropdown');
       if (dropdown) dropdown.classList.remove('is-open');
+      const themeDropdown = document.getElementById('themeDropdown');
+      if (themeDropdown) {
+        themeDropdown.classList.remove('is-open');
+        const themeBtn = document.getElementById('themeBtn');
+        if (themeBtn) themeBtn.setAttribute('aria-expanded', 'false');
+      }
       const drawer = document.getElementById('mobileDrawer');
       const toggle = document.getElementById('mobileMenuToggle');
       if (!drawer || !toggle) return;
@@ -3026,6 +3313,15 @@
         const dropdown = document.getElementById('langDropdown');
         if (dropdown) dropdown.classList.remove('is-open');
       }
+      const themeSwitcher = document.querySelector('.theme-switcher');
+      if (themeSwitcher && !themeSwitcher.contains(e.target)) {
+        const dropdown = document.getElementById('themeDropdown');
+        if (dropdown) {
+          dropdown.classList.remove('is-open');
+          const themeBtn = document.getElementById('themeBtn');
+          if (themeBtn) themeBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
       const header = document.querySelector('.site-header');
       if (header && !header.contains(e.target)) {
         closeMobileMenu();
@@ -3042,6 +3338,15 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeBetaModal();
+        closeMobileMenu();
+        const themeDropdown = document.getElementById('themeDropdown');
+        if (themeDropdown) {
+          themeDropdown.classList.remove('is-open');
+          const themeBtn = document.getElementById('themeBtn');
+          if (themeBtn) themeBtn.setAttribute('aria-expanded', 'false');
+        }
+        const langDropdown = document.getElementById('langDropdown');
+        if (langDropdown) langDropdown.classList.remove('is-open');
         return;
       }
 
@@ -3057,13 +3362,29 @@
       } else if (e.key === '3') {
         submitReview(3);
       } else if (e.key.toLowerCase() === 'r') {
-        playPronounce();
+        playPronounce(isFlipped);
       }
     });
 
-    function switchTheme(themeKey) {
-      document.body.setAttribute('data-theme', themeKey);
+    const themeNames = {
+      emerald: 'Emerald',
+      sapphire: 'Sapphire',
+      ruby: 'Ruby',
+      amber: 'Amber',
+      violet: 'Violet',
+      quartz: 'Quartz',
+      silver: 'Silver',
+      gold: 'Gold'
+    };
 
+    function switchTheme(themeKey) {
+      if (!themeNames[themeKey]) themeKey = 'emerald';
+      document.body.setAttribute('data-theme', themeKey);
+      try {
+        localStorage.setItem('nikaro_theme', themeKey);
+      } catch (e) {}
+
+      // 1. Sync Section Pills
       document.querySelectorAll('.theme-pill').forEach(pill => {
         if (pill.getAttribute('data-theme-key') === themeKey) {
           pill.classList.add('is-active');
@@ -3075,6 +3396,31 @@
         }
       });
 
+      // 2. Sync Header Theme Switcher
+      const themeLabel = document.getElementById('currentThemeLabel');
+      if (themeLabel) themeLabel.textContent = themeNames[themeKey];
+
+      const themeDot = document.getElementById('currentThemeDot');
+      if (themeDot) {
+        themeDot.className = `theme-btn-dot dot-${themeKey}`;
+      }
+
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        if (opt.getAttribute('data-theme-key') === themeKey) {
+          opt.classList.add('is-active');
+        } else {
+          opt.classList.remove('is-active');
+        }
+      });
+
+      const themeDropdown = document.getElementById('themeDropdown');
+      if (themeDropdown) {
+        themeDropdown.classList.remove('is-open');
+        const themeBtn = document.getElementById('themeBtn');
+        if (themeBtn) themeBtn.setAttribute('aria-expanded', 'false');
+      }
+
+      // 3. Sync Logos & Favicon
       const iconPath = `assets/icons/${themeKey}.svg`;
       const headerImg = document.getElementById('headerLogoImg');
       if (headerImg) headerImg.src = iconPath;
@@ -3221,6 +3567,16 @@
           setLanguage('en');
         }
       }
+    })();
+
+    // Init theme on page load
+    (function initTheme() {
+      try {
+        const savedTheme = localStorage.getItem('nikaro_theme');
+        if (savedTheme && themeNames[savedTheme]) {
+          switchTheme(savedTheme);
+        }
+      } catch (e) {}
     })();
   </script>
 </body>
